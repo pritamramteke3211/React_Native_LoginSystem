@@ -5,21 +5,24 @@ import CustomInputs from '../../components/CustomInput/CustomInputs';
 import SocialSignInButtons from '../../components/SocialSignInButtons';
 import { useNavigation } from '@react-navigation/core';
 
-const SignUpScreen = () => {
+const SignUpScreen = ({userdata , setUserData}) => {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [passwordRepeat, setPasswordRepeat] = useState('');
   
-  const userdetails = {}
+
 
   const navigation = useNavigation();
+  
 
   const onRegisterPressed = () => {
     if(username === '' && email === '' && password ==='' && passwordRepeat === ''){
         console.warn("All Field Required")
     }
     else{
+      
+      console.warn(userdetails)
       navigation.navigate('ConfirmEmail')
     }
   };

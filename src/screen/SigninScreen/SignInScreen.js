@@ -14,10 +14,10 @@ import SocialSignInButtons from '../../components/SocialSignInButtons/SocialSign
 import {useNavigation} from '@react-navigation/core';
 
 const SignInScreen = () => {
-  const userdata = [{
+  const userdetails = {
     name: 'pritam',
     pass: '1234',
-  }];
+  };
 
   const {height} = useWindowDimensions();
   const navigation = useNavigation();
@@ -34,7 +34,7 @@ const SignInScreen = () => {
     ) {
       console.warn('All Field Required');
     } 
-    else if (username === userdata.name && password === userdata.pass) {
+    else if (username === userdetails.name && password === userdetails.pass) {
       navigation.navigate('Home');
       console.warn('User Login Sucessfully');
     } else {
